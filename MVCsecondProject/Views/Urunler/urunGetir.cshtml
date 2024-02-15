@@ -1,0 +1,36 @@
+﻿@model MVCsecondProject.Models.Entity.TBL_Urunler
+
+@{
+    ViewBag.Title = "urunGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>urunGetir</h2>
+
+@using (Html.BeginForm("Guncelle", "Urunler", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.UrunID)
+    <div>
+        <label>Müşteri Adı</label>
+        @Html.TextBoxFor(m => m.UrunAd, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Marka</label>
+        @Html.TextBoxFor(m => m.Marka, new { @class = "form-control" })
+    </div>    
+    <div>
+        <label>Urun Kategoriler</label>
+        @Html.TextBoxFor(m => m.UrunKategoriler, new { @class = "form-control" })
+    </div>    
+    <div>
+        <label>Fiyat</label>
+        @Html.TextBoxFor(m => m.Fiyat, new { @class = "form-control" })
+    </div>    
+    <div>
+        <label>Stok</label>
+        @Html.TextBoxFor(m => m.Stok, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-check">Güncelle</button>
+    </div>
+}

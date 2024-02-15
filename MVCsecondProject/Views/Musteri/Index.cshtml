@@ -1,0 +1,26 @@
+﻿@using MVCsecondProject.Models.Entity
+@model List<TBL_Musteri>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <td>Müşteri Adı</td>
+        <td>Müşteri Soyadı</td>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MusteriAd</td>
+                <td>@item.MusteriSoyad</td>
+                <td><a href="/Musteri/MusteriGetir/@item.MusteriId" class="btn btn-success">Güncelle</a></td>
+                <td><a href="/Musteri/Sil/@item.MusteriId" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Musteri/NewCategory" class="btn btn-primary">Yeni Kategori Ekle</a>
+
